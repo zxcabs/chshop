@@ -7,7 +7,7 @@
 
 var
 	path = require('path'),
-	configDirName = process.env.NODE_ENV ? process.NODE_ENV.toLowerCase(): 'development';
+	configDirName = (process.env.NODE_ENV || 'development').toLowerCase();
 
 console.log('load "%s" config', configDirName);
 module.exports = require(path.join(__dirname, configDirName));
